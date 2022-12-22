@@ -213,3 +213,20 @@ f.close()  # закрытие файла
 # то файл все равно закрывается.
 with open('xyz.txt', 'w') as f:
     f.write('Hello\nWorld')
+
+# Библиотека Requests
+# позволяет нам работать с http
+
+# пример get-запроса
+r_get = requests.get('https://jsonplaceholder.typicode.com/users')
+
+print(r_get.json())
+
+# пример post-запроса
+r_post = requests.post('https://jsonplaceholder.typicode.com/posts', {
+    'title': 'foo',
+    'body': 'bar',
+    'userId': 1,
+})
+
+print(r_post.json())
